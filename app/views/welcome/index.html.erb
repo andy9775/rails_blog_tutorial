@@ -1,1 +1,6 @@
 <h1>Hello rails</h1>
+<%= link_to 'My Blog', controller: 'articles' %>
+<!-- or -->
+<!-- <%= link_to 'My Blog', articles_path %> -->
+<!-- in this case we can have the controller handle the link (and its index action) -->
+<!-- or we can specify the path via articles_path just like new_article_path -->
