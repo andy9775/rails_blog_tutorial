@@ -6,5 +6,20 @@
 	<strong>Text:</strong>
 	<%= @article.text %>
 </p>
+
+<%# Iterate through list of comments associated with this article and show %>
+<h2>Comments</h2>
+<%# calls _comment partial in views/comments/ for each comment %>
+<%# must have form with singular name and _ %>
+<%#
+	As the render method iterates over the @article.comments collection, it
+	assigns each comment to a local variable named the same as the partial, in this
+	case comment which is then available in the partial for us to show.
+	%>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_article_path(@article) %>
 <%= link_to 'Back', articles_path %>
